@@ -1,0 +1,92 @@
+<html>
+<head>
+<meta name=viewport content="width=device-width, initial-scale=1, user-scalable=0">
+<meta charset="utf-8" />
+<link rel="stylesheet" href="css/core.css">
+<link rel="stylesheet" href="css/main.css">
+	<style>
+	.container {
+	margin-bottom: 20px;
+	text-align: center;
+	color: black;
+	font-size: 1.1em;
+	font-family: 티머니 둥근바람;
+}
+</style>
+  		<center>
+  
+<title>책가람</title>
+</head>
+<body>
+	<div class="page-hdr">책가람</div>
+	<div class="page-body">
+    <div class="page-mnu">
+			<div class="menu" onclick="home()">홈</div>
+			<div class="menu" onclick="rank()">책간순위</div>
+			<div class="menu" onclick="store()">북적상점</div>
+			<div class="menu" onclick="addFeed()">북적북적</div>
+			<div class="menu" onclick="mypage()">내정보</div>	
+		</div>
+
+  
+  		<div class="container">
+		<section class="main main-ranking">
+		   <h1>북적 상점</h1>
+			<p>우리 동네에 있는 서점을 소개합니다.</p>
+			<p>온라인 서점의 영업이익은 날이 갈수록 늘어나는 반면 오프라인 서점의 매출은 점점 줄고, 매년 문을 닫는 서점들이 늘어나고 있습니다.</p>
+			<p>손쉽게 버튼 몇 번 클릭하는 것으로 책을 사는 것도 좋지만 책 향기와 그 순간의 기억까지 함께 사는 것은 어떨까요?</p>
+			
+			<img src="image/map.jpg" alt="" width="300" height="300">
+			<div class="list">
+			<ul>
+		    <li><a href="bron.html" >동네책방 브론테살롱</a></li>
+		    <p> </p>
+		    <li><a href="sun.html" target=>햇살속으로</a></li>
+		    <p> </p>
+		    <li><a href="private.html" target=>사적인 서점</a></li>
+		    <p> </p>
+		    <li><a href="amond.html" target=>아몬드 아뜰리에</a></li>
+		
+		    </ul>
+			</div>
+	
+			</section>
+			</div>
+			</center>
+			
+		
+  			   
+		  
+</body>
+</html>
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/core.js"></script>
+	<script>
+
+	function getImageUrl(filename) {
+		return "users/" + pagectx.usrobj.id + "/" + filename;
+	}
+
+	function home() {
+		window.location.href = "main.html";   
+		}
+
+	function rank() {
+		window.location.href = "rank.html";
+		
+	}
+
+	function addFeed() {
+		window.location.href = "community.html";
+	}
+
+	function store() {
+		window.location.href = "map.html";
+		
+	}
+		
+
+	function mypage() {
+		window.location.href = "myPage.html";   
+		}
+		</script>

@@ -1,0 +1,184 @@
+<html>
+<head>
+<meta name=viewport content="width=device-width, initial-scale=1, user-scalable=0">
+<meta charset="utf-8" />
+<link rel="stylesheet" href="css/core.css">
+<title>책가람</title>
+<style>
+.sub{
+margin-button: 10px;
+text-align: center;
+font-size: 1.1em;
+font-family: 티머니 둥근바람;
+}
+.page-mnu .menu {
+	float: left;
+	padding: 14px 15px;
+	font-size: 1em;
+	box-sizing: border-box;
+	
+}
+.feed .author .name {
+	font-weight: bold;
+}
+.bon {
+	margin-bottom: 20px;
+	text-align: left;
+	color: black;
+	font-size: 0.9em;
+	font-family: 티머니 둥근바람;
+}
+</style>
+
+</head>
+<body>
+<div class="page-hdr"> 책가람</div>
+
+  <div class="page-hdr">책가람</div>
+	<div class="page-body">
+		<div class="page-mnu">
+			<div class="menu" onclick="home()">홈</div>
+			<div class="menu" onclick="rank()">책간순위</div>
+			<div class="menu" onclick="store()">북적상점</div>
+			<div class="menu" onclick="addFeed()">북적북적</div>
+			<div class="menu" onclick="mypage()">내정보</div>	
+		</div>
+		<table id="list" class="section mtop-20 pad-16"></table>
+	</div>
+			
+		  
+		  <center><img src="image/메인1.JPG" style=width="100" height="225"></center>
+			<div class="sub">
+		   <h1>책이 흐르는 강, 책가람</h1>
+		   </div>
+		   <div class="bon">
+  			  <div>책을 읽는것이 좋다는 걸 알지만 실행에 옮기기는 매우 힘드시죠?<br>
+			  어떤 책을 읽어야할지도 모르겠고 흥미가 잘 생기지 않는 당신을 위한 어플리케이션,책가람<br>
+			  흘러가는 책들 중 당신의 마음에 드는 책이 있길 바라는 마음으로 만들었습니다.
+			 </div>
+  			   </div>
+  			   
+		  <div class="sub">
+		   <h1>책 왜 읽어야할까?</h1></div>
+		   <div class="bon">
+  			  작은 네모박스 하나로 모든 정보를 얻는 요즘,사람들은 모르는 것이 있으면 글로 읽어서 찾기보다는 영상으로 해결하는 시대입니다.
+			  이러한 난독시대에 청소년들은 교과 수업 독해 능력의 저하로 30% 비율의 학생들이 교과 수업을 따라가지 못하는 어려움을 겪고 있습니다.<br>
+			 </div>
+			  <center><img src="image/graph.jpg" width="300" height="300"></center><br>
+		   <div class="bon">
+			 <br>
+			  실제로 어릴때부터 읽기를 빨리 배운 아이 일수록 책을 많이 읽게 되고 그로 인해 어휘력과 배경지식이 늘어나는데 반해 읽기를 느리게 배울수록 독서량도 적고, 어휘력도 부족해진다는 연구결과가 있습니다.
+			  단순한 지식을 채우는 것을 넘어서 삶의 필수적인 요소가 되어버린 독서.
+			  책가람이 여러분들과 함께 하겠습니다
+	
+  			  </div>
+			
+		<div class="sub">
+				   <h1>이달의 책</h1>
+			<p>이번달 가장 사랑 받은 책입니다.</p>
+			</div>
+			
+			<center><button type="button" value='더보기' onclick="if(this.parentNode.getElementsByTagName('div')[0].style.display != ''){this.parentNode.getElementsByTagName('div')[0].style.display = '';this.value = '숨기기';}else{this.parentNode.getElementsByTagName('div')[0].style.display = 'none'; this.value = '더보기';}" >
+			<img src="image/book1.png" alt="">
+			</button>
+  			  <div class="bon">
+  			  <p>저자 소윤</p>
+  			  <p>출판 북로망스</p>
+  			  <p>출간 2021.03.24</p>
+  			  <p>"존재만으로도 충분한 너에게 해주고 싶은 말" 고단한 일상에서 가끔 우리는 각자의 빛을 잊고 살 때가 있다.</p>
+  			  <p>빛나야하는 이유도 점점 내가 아닌 타인, 혹은 다른 이유가 되어버리는 세상.</p>
+  			  <p>세상이 제멋대로 정의한 거대한 별만 바라보느라, 내 안의 빛을 보고 있지 못한 우리에게 건네는 작가의 위로.</p>
+  			  </center>
+  			 
+			<section class="main main-talk">
+			<h1> new 북적북적</h1>
+			<p>북적북적 최신 게시글 입니다.</p>
+			<div id="hlrpsb">
+				<div id="LIST" class="section mtop-20 pad-16"> </div>	
+			</div>	
+			</section>
+		
+</body>
+</html>
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/core.js"></script>
+		<div class="container">
+	<script>
+
+		function start(uid) {
+			AJAX.call("feedGetGroup.jsp", null, function(data) {
+			var feeds = JSON.parse(data.trim());
+			show(feeds);
+			});
+			
+		}
+		
+		function show(feeds){
+			var str = "";
+			for (var i=0; i<feeds.length; i++) {
+				str += "<hr>";
+				str += getFeedCode(feeds[i]);
+				}
+			$("#LIST").append(str);
+			
+		}
+		
+		function getFeedCode(feeds){
+			var name = (feeds.user == null) ? feeds.id : feeds.user.name;
+			var str = "<div class='feed'>";
+			str += "<div class='author'>";
+			str += "<div class='name'>" + name + "</div>";	
+			str += "</div>";
+			str += "<div class='text'>" + feeds.text + "</div>";
+
+			return str;
+		}
+		
+		function community(){
+			window.location.href = "community.html";
+		}
+		
+		
+		</script>
+		</div>
+
+<script>
+function getImageUrl(filename) {
+	return "users/" + pagectx.usrobj.id + "/" + filename;
+}
+
+function home() {
+	window.location.href = "main.html";   
+	}
+
+function rank() {
+	window.location.href = "rank.html";
+	
+}
+
+function addFeed() {
+	window.location.href = "community.html";
+}
+
+function store() {
+	window.location.href = "map.html";
+	
+}
+	
+
+function mypage() {
+	window.location.href = "myPage.html";   
+	}
+
+
+function logout() {
+	var res = confirm("로그아웃하시겠습니까?");
+	if (res == true) {
+		AJAX.call("jsp/logout.jsp", null, function(data) {
+			window.location.href = "login.html";
+		});
+	}
+}
+
+
+</script>

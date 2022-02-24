@@ -1,0 +1,154 @@
+<html>
+<head>
+<link rel="shortcut icon" type="image⁄index1.jpg" href="image/loogo.jpg">
+<title>책가람</title>
+<meta name=viewport content="width=device-width, initial-scale=1, user-scalable=0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="css/rank.css">
+<style>
+.txt1 {
+	margin-bottom: 20px;
+	text-align: center;
+	color: black;
+	font-size: 1.1em;
+	font-family: 티머니 둥근바람;
+}
+.txt2{
+	margin-bottom:20px;
+	text-align:center;
+	color:balck;
+	font-size:0.7em;
+	font-family: 나눔스퀘어;
+}
+.txt3{
+	margin-buttom: 20px;
+	text-align:left;
+	color: black;
+	font-size:0.9em;
+	font-family:티머니 둥근바람;
+}
+.num{
+	margin-bottom: 10px;
+	text-align: center;
+	color: brown;
+	font-size: 0.9em;
+	font-weight: bold; 
+	font-family: 티머니 둥근바람 ExtraBold;
+
+}
+</style>
+
+</head>
+<body>
+<div class="page-hdr"> 책간순위</div>
+
+    <div class="page-body"><br><br>
+    <div class="page-mnu">
+			<div class="menu" onclick="home()">홈</div>
+			<div class="menu" onclick="rank()">책간순위</div>
+			<div class="menu" onclick="store()">북적상점</div>
+			<div class="menu" onclick="addFeed()">북적북적</div>
+			<div class="menu" onclick="mypage()">내정보</div>
+		</div>
+</div>
+<div class="book" >
+<select onchange="if(this.value) location.href=(this.value);">
+	<option value="rank.html" >전체</option>
+	<option value="rank2.html">국내도서</option>
+	<option value="rank3.html" selected>외국도서</option>
+	<option value="rank4.html">자격증/수험서</option>
+</select>
+<br><br>
+<div class="num"> 01
+	<div class="txt1"> Rolling Stone (월간 미국판): 2021년 06월호 BTS 방탄소년단 커버</div></div>
+<img src="image/31.jpg" style="margin-left: auto; margin-right: auto; display: block;">
+<div class="txt2"><p>Rolling Stone 편집부 (지은이) | Rolling Stone | 2021년 6월</p> </div>
+<div class="txt3"><span>방탄소년단의 첫 커버!, 영어가사와 한국어 가사가 8P로 구성되어져 있습니다.!</span></div><br><br>
+
+
+<div class="num"> 02
+	<div class="txt1"> When You Trap a Tiger (2021 Newbery Winner) (Paperback, International Edition) </div></div>
+<img src="image/32.jpg" style="margin-left: auto; margin-right: auto; display: block;">
+<div class="txt2"><p>태 켈러 (지은이) | Random House USA Inc | 2020년 1월</p> </div>
+<div class="txt3"><span>Would you make a deal with a magical tiger? This uplifting story brings Korean folklore to life as a girl goes on a quest to unlock the power of stories and save her grandmother.</span></div><br><br>
+
+<div class="num"> 03
+	<div class="txt1"> Wonder (Paperback, 미국판, International Edition)  </div></div>
+<img src="image/33.jpg" style="margin-left: auto; margin-right: auto; display: block;">
+<div class="txt2"><p>R. J. Palacio (지은이) | Random House USA Inc | 2014년 6월</p> </div>
+<div class="txt3"><span>Ten-year-old Auggie, born with extreme facial abnormalities, goes from being home-schooled to entering fifth grade at a private middle school, where he endures taunts and bullying and struggles to be seen as just another student.
+</span></div><br><br>
+
+<div class="num"> 04
+	<div class="txt1"> Holes (Paperback, 미국판)</div></div>
+<img src="image/34.jpg" style="margin-left: auto; margin-right: auto; display: block;">
+<div class="txt2"><p>루이스 새커 (지은이) | Random House | 2000년 5월
+</p> </div><div class="txt3"><span>
+#1 NEW YORK TIMES BESTSELLER - NEWBERY MEDAL WINNER - NATIONAL BOOK AWARD WINNER
+Dig deep in this award-winning, modern classic that will remind readers that adventure is right around the corner--or just under your feet
+</span></div><br><br>
+
+<div class="num"> 05
+	<div class="txt1">A Long Walk to Water (Paperback) </div></div>
+<img src="image/35.jpg" style="margin-left: auto; margin-right: auto; display: block;">
+<div class="txt2"><p>린다 수 박 (지은이) | Sandpiper | 2011년 10월
+</p> </div>
+<div class="txt3"><span>뉴베리 상 수상에 빛나는 한국계 작가 Linda Sue Park이 실화를 바탕으로 선보이는 새로운 이야기!
+1990년대 후반의 딩카 족 소년 살바, 2000년대 초반의 누어 족 소녀 니아가 만났을 때!
+니아는 가족들을 위해 우물에 가서 물을 길어 와야 한다. 그것도 매일 같이 8시간을 걸어서. 한편 살바는 전쟁으로 피폐해진 마을 떠난다. 가족들과 혼자 떨어지게 된 살바는 가족들을 찾아 그리고 자신의 안전을 위해서 아프리카를 떠돈다.
+</span></div><br><br>
+
+
+</div>
+
+</html>
+<!-- 
+<select onchange="if(this.value) location.href=(this.value);">
+
+        <option value="ALL">선택해주세요</option>
+
+        <option value="">네이버</option>
+
+        <option value="http://www.google.com">구글</option>
+
+ -->
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/core.js"></script>
+<script>
+
+
+function getImageUrl(filename) {
+	return "users/" + pagectx.usrobj.id + "/" + filename;
+}
+
+function home() {
+	window.location.href = "main.html";   
+	}
+
+function rank() {
+	window.location.href = "rank.html";
+	
+}
+
+function addFeed() {
+	window.location.href = "community.html";
+}
+
+function store() {
+	window.location.href = "map.html";
+	
+}
+	
+
+function mypage() {
+	window.location.href = "myPage.html";   
+	}
+
+
+
+
+
+
+
+</script>

@@ -1,0 +1,69 @@
+<html>
+<head>
+<meta name=viewport content="width=device-width,inital-scale=1, user-scalable=0">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/core.css">
+<title>회원탈퇴</title>
+<style>
+.desc{
+	float:left;
+	width:100%;
+	color:#888;
+	font-size:0.9em;
+	text-align: center;
+}
+.mid{
+	float:left;
+	width:100%;
+	color:#888;
+	font-size:0.9em;
+	text-align: center;
+
+}
+
+</style>
+</head>
+<body>
+<div class="page-hdr">회원탈퇴</div>
+	<div class="page-body">
+	<div class="section pad-48 mtop-30">
+		<input id="id"type="text" placeholder="아이디 (이메일주소)" required>
+		<input type="submit" class="mtop-20" value="회원탈퇴하기" onclick="withdraw()">
+	</div>
+	<div class="section pad-24 mtop-30">
+		<div class="mid"></div>
+	
+</div>
+</body>
+</html>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/core.js"></script>
+<script>
+
+function withdraw() {
+	var id = $("#id").val().trim();
+		if(id == "") {
+			alert("아이디를입력해주세요.");
+			$("#id").focus();
+			return;
+	}
+		
+	
+		AJAX.call("widthdraw1.jsp",null,function(data){
+			var code =data.trim();
+			if(code =="NA"){
+				alert("회원 정보를 찾을 수 없습니다.");
+			}
+			else if(code == "OK"){
+				alert("회원 탈퇴가 완료되었습니다.");
+				window.location.href= "login.html";
+
+			}
+			else if(code == "ER"){
+				alert("회원탈퇴 중 오류가 발생하였습니다..");
+			}
+			
+		});
+}
+</script>

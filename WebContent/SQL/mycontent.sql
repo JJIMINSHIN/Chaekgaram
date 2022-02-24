@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS mycontent
+DEFAULT CHARACTER SET UTF8 COLLATE UTF8_general_ci;
+
+USE mycontent;
+
+CREATE TABLE IF NOT EXISTS community(
+no INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+id VARCHAR(128), -- "email"
+uindex VARCHAR(32),
+text VARCHAR(4096)
+);
+
+INSERT INTO community VALUE(1,"codnjs3575@nate.com","KOR","hi hello");

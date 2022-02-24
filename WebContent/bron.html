@@ -1,0 +1,78 @@
+<html>
+<head>
+<meta name=viewport content="width=device-width, initial-scale=1, user-scalable=0">
+<meta charset="utf-8" />
+<link rel="stylesheet" href="css/core.css">
+<link rel="stylesheet" href="css/main.css">
+<title>책가람</title>
+</head>
+<body>
+	<div class="page-hdr">책가람</div>
+	<div class="page-body">
+		<div class="page-mnu">
+			<div class="menu" onclick="">홈</div>
+			<div class="menu" onclick="">책간순위</div>
+			<div class="menu" onclick="">북적상점</div>
+			<div class="menu" onclick="">내정보</div>
+			<div class="menu" onclick="addFeed()">북적북적</div>
+		</div>
+		<table id="list" class="section mtop-20 pad-16"></table>
+	</div>
+  			   
+  		<div class="container">
+		<section class="main main-ranking">
+		<style>
+	.container {
+	margin-bottom: 20px;
+	text-align: center;
+	color: black;
+	font-size: 1.1em;
+	font-family: 티머니 둥근바람;
+}
+</style>	   
+		<center>
+		   <h1>동네책방 브론테살롱</h1>
+	
+			<p>서울 노원구 동일로 242길 80</p>
+			<p>수락산역 3번출구에서 605m</p>
+			<p>02-933-8051</p>
+			<p>매일10:00-18:00</p>
+			<p>일요일 휴무</p>
+			<img src="image/bron.jpg" alt="" width="300" height="300">
+			</center>
+			<div class="list">
+			<ul>
+		    </ul>
+			</div>
+	
+			</section>
+			</div>  
+			<center>
+			<div id="map" style="width:300px;height:300px;"></div>
+			
+			<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=02a2182d1c309ac547c2ae80cf72d40e"></script>
+			<script>
+			var mapContainer = document.getElementById('map'), 
+		    mapOption = { 
+		        center: new kakao.maps.LatLng(37.673986001492175, 127.06001126910601), 
+		    };
+
+		var map = new kakao.maps.Map(mapContainer, mapOption);
+
+		var markerPosition  = new kakao.maps.LatLng(37.673986001492175, 127.06001126910601); 
+
+
+		var marker = new kakao.maps.Marker({
+		    position: markerPosition
+		});
+
+		marker.setMap(map);
+			
+		 </script>
+		 </center>
+</body>
+</html>
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/core.js"></script>
+	<script>
+		</script>

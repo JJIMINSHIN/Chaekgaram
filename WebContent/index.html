@@ -1,0 +1,46 @@
+<html>
+<head>
+<link rel="shortcut icon" type="image⁄index1.jpg" href="image/loogo.jpg">
+<meta name=viewport content="width=device-width, initial-scale=1, user-scalable=0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/core.css">
+<title>책가람</title>
+<style>
+.logo {
+	position: absolute;
+	left: 0px;  top: 20%; width: 100%;
+	text-align: center;
+}
+.footer {
+	position: absolute;
+	left: 0px; bottom: 7%; width: 100%;
+	text-align: center;
+	font-size: 0.8em;
+	color: #999;
+}
+</style>
+</head>
+<body>
+	<div class="logo">
+	<img src="image/loogo.jpg" width="300"></div>
+	<div class="footer">Copyright: chaekgaram.com, 2021</div>
+</body>
+</html>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/core.js"></script>
+<script>
+$(document).ready(function() {
+	Page.getUserobj(start);
+});
+
+function start(usrobj) {
+	setTimeout(function() {
+		$("body").fadeOut();
+		setTimeout(function() {
+			var url = (usrobj == null) ? "login.html" : "main.html";
+			window.location.href = url;
+		}, 800);
+	}, 2000);
+}
+</script>

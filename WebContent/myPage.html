@@ -1,0 +1,111 @@
+zz<html>
+<head>
+<link rel="shortcut icon" type="image⁄index1.jpg" href="image/loogo.jpg">
+<title>책가람</title>
+<meta name=viewport content="width=device-width, initial-scale=1, user-scalable=0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="css/rank.css">
+<style>
+.button {
+	float: left;
+	width: 100%;
+	line-height: 45px;
+	text-align: left;
+	font-size: 0.9em;
+	font-family: 나눔스퀘어;
+		background-color:white ;
+	color:black;
+	padding-left: 10px;
+	border: 1.5px solid #7C7C7C;
+}
+
+.txt1 {
+	margin-bottom: 20px;
+	text-align: center;
+	color: black;
+	font-size: 1.1em;
+	font-family: 나눔스퀘어;
+}
+.txt2{
+	margin-bottom:20px;
+	text-align:center;
+	color:balck;
+	font-size:0.7em;
+	font-family: 나눔스퀘어;
+}
+.txt3{
+	margin-buttom: 20px;
+	text-align:center;
+	color: black;
+	font-size:1em;
+	font-family:나눔스퀘어;
+}
+</style>
+
+</head>
+<body>
+<div class="page-hdr"> 내정보</div>
+
+    <div class="page-body"><br><br>
+    <div class="page-mnu">
+			<div class="menu" onclick="home()">홈</div>
+			<div class="menu" onclick="rank()">책간순위</div>
+			<div class="menu" onclick="store()">북적상점</div>
+			<div class="menu" onclick="addFeed()">북적북적</div>
+			<div class="menu" onclick="mypage()">내정보</div>
+		</div>
+</div>
+<div id="contents-area" class="section"></div>
+<div class="desc mtop-30" >
+<div class="txt1">사용자<br><br></div>
+<center>
+<img src="image/사용자.jpg" width="90"></div>
+</center>
+<div class="desc mtop-10" >
+
+	</div>
+		<div>
+	<button class ="button" onclick="location.href='userManagement.html'">회원 관리  </button>
+	<button class ="button" onclick="location.href='feedview.html'">작성 글 보기</button>
+	<button class ="button" onclick="location.href='adminPass.html'">관리자 페이지</button>
+</div>
+
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/core.js"></script>
+<script>
+
+
+
+function getImageUrl(filename) {
+	return "users/" + pagectx.usrobj.id + "/" + filename;
+}
+
+function home() {
+	window.location.href = "main.html";   
+	}
+
+function rank() {
+	window.location.href = "rank.html";
+	
+}
+
+function addFeed() {
+	window.location.href = "community.html";
+}
+
+function store() {
+	window.location.href = "map.html";
+	
+}
+	
+
+function mypage() {
+	window.location.href = "myPage.html";   
+	}
+
+
+
+
+
+</script>

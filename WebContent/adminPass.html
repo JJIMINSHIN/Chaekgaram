@@ -1,0 +1,110 @@
+<html>
+<head>
+<link rel="shortcut icon" type="image⁄x-icon" href="images/logo.png">
+<meta name=viewport content="width=device-width, initial-scale=1, user-scalable=0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/core.css">
+<title>책가람</title>
+<style>
+.pagebody {
+	width: 100%;
+	background-color: #ffffff;
+	background-position: 50% 20%;
+	background-repeat: no-repeat;
+	background-size: 200px;
+}
+.pagebody input {
+	float: center;
+	width: 100%;
+	padding: 0 16px;
+	box-sizing: border-box;
+	line-height: 50px;
+	text-align: center;
+	font-size: 1.0em;
+	border: 1px solid #ddd;
+	border-radius: 20px;
+	outline: none;
+}
+.button2{
+	margin-top: 30px;
+	float: center;
+	width: 88%;
+	line-height: 50px;
+	text-align: center;
+	font-size: 1.1em;
+	font-family: 나눔스퀘어;
+	background-color: #F4A406 ;
+	color: white;
+	border-radius: 20px;
+	border: 1.5px solid white;
+}
+.txt1 {
+	margin-top: 130px;
+	padding-top:50px;
+	text-align: center;
+	color: black;
+	font-size: 1.3em; 
+	font-family: 나눔스퀘어;
+	line-height: 150%;
+}
+.btn {
+	margin-top: 30px;
+	float: center;
+	width: 15%;
+	line-height: 30px;
+}
+.btn2 {
+	float: left;
+	width: 10%;
+	height: 80%;
+	color: #00ff0000;
+	background-color: #00CD3C;
+	background-position: 50% 0%;
+	background-repeat: no-repeat;
+	background-size: 45px;
+	background-image: url("./images/back_icon.png");
+}
+</style>
+</head>
+<body>
+	<div class="page-hdr">관리자 페이지</div></a>
+
+	<div class="pagebody">
+	<div class="section pad-24 mtop-30">	
+    <div class="txt1">관리자 번호를 입력해주세요.<br><br></div>
+	<div class="section pad-24 mtop-20">
+	<input id="adminPs" class="mtop-10" type="password">
+	<input class ="button2" value="확인" onclick="adminPass()">
+	</div>
+	</div>
+	</div>
+	<div class="page-footer">Copyright: chaekgaram.com, 2021</div>
+</body>
+</html>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/core.js"></script>
+<script>
+$(document).ready(function() {
+	Page.init(start);
+});
+
+var pagectx = {};
+function start(usrobj) {
+	pagectx.usrobj = usrobj;
+}
+
+function adminPass() {
+	var adminPs = $("#adminPs").val();
+	if (adminPs == "1234") {
+		alert("관리자 페이지로 이동합니다.");
+		window.location.href = "adminPage.html";
+	}
+	else {
+		alert("관리자만 접근 가능합니다.");
+		$("#adPass").focus();	
+		window.location.href = "myPage.html";
+		return;
+	}
+	
+}	
+</script>

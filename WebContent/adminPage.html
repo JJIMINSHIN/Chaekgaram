@@ -1,0 +1,119 @@
+<html>
+<head>
+<link rel="shortcut icon" type="image⁄x-icon" href="images/logo.png">
+<title>책가람</title>
+<meta name=viewport content="width=device-width, initial-scale=1, user-scalable=0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/core.css">
+<style type="text/css">
+.desc {
+	float: left;
+	width: 100%;
+	color: #888;
+	font-size: 0.8em;
+	text-align: center;
+}
+.button {
+	float: left;
+	width: 100%;
+	line-height: 45px;
+	text-align: left;
+	font-size: 0.9em;
+	font-family: 나눔스퀘어;
+		background-color:white ;
+	color:black;
+	padding-left: 10px;
+	border: 1.5px solid #7C7C7C;
+}
+
+.txt1 {
+	padding-top:10px;
+	text-align: center;
+	color: black;
+	font-size: 1.3em;
+	font-weight: bold; 
+	font-family: 나눔스퀘어;
+	line-height: 150%;
+}
+
+</style>
+</head>
+<body>
+	<div class="page-hdr">관리자 페이지</div></a>
+
+</div>
+  <div class="page-hdr">책가람</div>
+	<div class="page-body">
+		<div class="page-mnu">
+			<div class="menu" onclick="home()">홈</div>
+			<div class="menu" onclick="rank()">책간순위</div>
+			<div class="menu" onclick="store()">북적상점</div>
+			<div class="menu" onclick="addFeed()">북적북적</div>
+			<div class="menu" onclick="mypage()">내정보</div>	
+		</div>
+		<table id="list" class="section mtop-20 pad-16"></table>
+	</div>
+<div id="contents-area" class="section"></div>
+<div class="desc mtop-30" style="text-align:center">
+<img src="image/관리자.jpg" width="90"></div>
+<div class="desc mtop-10" >
+<div class="txt1">관리자<br><br></div>
+	</div>
+		<div>
+	<button class ="button" onclick="admin_user()">회원 관리 </button>
+	<button class ="button" onclick="admin_feed()">게시판 관리</button>
+	<button class ="button" onclick="location.href='myPage.html'">관리자 페이지 나가기</button>
+</div>
+	
+<div class="page-footer" class="section">
+	Copyright: chaekgaram.com, 2020
+</div>
+</body>
+</html>
+
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/core.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	Page.init(start);
+});
+
+var pagectx = {};
+function start(usrobj) {
+	pagectx.usrobj = usrobj;
+}
+
+
+function home() {
+	window.location.href = "main.html";   
+	}
+
+function rank() {
+	window.location.href = "rank.html";
+	
+}
+
+function addFeed() {
+	window.location.href = "community.html";
+}
+
+function store() {
+	window.location.href = "map.html";
+	
+}
+	
+
+function mypage() {
+	window.location.href = "myPage.html";   
+	}
+
+	
+function admin_feed() {
+	window.location.href="admin_feed.html";
+}
+		
+	
+
+</script>

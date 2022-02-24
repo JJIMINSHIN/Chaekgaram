@@ -1,0 +1,49 @@
+<html>
+<head>
+<meta name=viewport content="width=device-width,inital-scale=1, user-scalable=0">
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/core.css">
+<style>
+.desc{
+	float;left;
+	width:100%;
+	color:#888;
+	font-size:0.9em;
+}
+</style>
+</head>
+<body>
+	<div class="page-hdr">책가람</div>
+	<div class="page-body">
+	<div class="section pad-24 mtop-30">
+		<input id="id" type="text" placeholder="아이디 (이메일주소)" required>
+		<input type="submit" class="mtop-20" value="로그아웃하기" onclick="logout()">
+		
+	</div>
+	<div class="section pad-24 mtop-30">
+		<div class="desc mtop-20 mbot-20">
+	</div>
+	</div>
+	</div>
+	<div class="page-footer">Copyright: mysns.com, 202x</div>
+
+</body>
+</html>
+<script src="js/jquery-3.6.0.min.js" type="text/javascript"></script>
+<script src="js/core.js" type="text/javascript"></script>
+<script>
+$(document).ready(function(){
+	Page.init(setup);
+});
+
+
+	function logout(){
+		var log = confirm("로그아웃 하시겠습니까?");
+		if( log == true){
+			AJAX.call("logout.jsp",null,function(data){
+				window.location.href="login.html";
+		});
+	}
+	}
+	
+</script>

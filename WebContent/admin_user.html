@@ -1,0 +1,106 @@
+<html>
+<head>
+<meta name=viewport content="width=device-width, initial-scale=1, user-scalable=0">
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/core.css">
+<title>책가람</title>
+<style>
+.pad-4 { padding: 0 4px; }
+textarea {
+	float: left;
+	width: 100%;
+	height: 160px;
+	padding: 16px;
+	box-sizing: border-box;
+	font-size: 1.0em;
+	font-family: 'Malgun Gothic', 'Arial'; 
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	outline: none;
+}
+input[type=file] {
+	padding: 0px;
+	border: none;
+	outline: none;
+	font-size: 0.95em;
+}
+.desc {
+	float: left;
+	width: 100%;
+	margin-bottom: 5px;
+	font-size: 0.95em;
+	color: #888;
+}
+.txt1 {
+	padding-top:50px;
+	text-align: center;
+	color: black;
+	font-size: 1.3em;
+	font-weight: bold; 
+	font-family: 나눔스퀘어;
+	line-height: 150%;
+}
+</style>
+</head>
+<body>
+    <div class="page-hdr">책가람</div> 
+
+    <div class="page-footer">Copyright: chaekgaram.com, 2021</div>
+</body>
+</html>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/code.js"></script>
+<script>
+$(document).ready(function(){
+	Page.init(setup); //function setup()을 여기로 집어넣음
+
+	var pagectx = {};
+	function start(usrobj) {
+		pagectx.usrobj = usrobj;
+		
+		var params = "id=" + usrobj.id;
+		AJAX.call("userFetch.jsp", params, function(data) {
+			var list = JSON.parse(data.trim());
+			pagectx.users = list;
+			
+			generate(list);
+		});
+	}
+
+	function generate(list) {
+		var str = "";
+		for (var i=0; i<list.length; i++) {	// page generation
+			str += getUserStr(list[i]);
+		}
+		$("#contents-area").html(str);
+	}
+
+	function getUserStr(user) {
+		if (pagectx.usrobj.id == user.id) return "";
+			
+		var str = "";
+		str += "<div class='bb'></div>";
+		str += "<div class='feed'>";
+		str += "<div class='author'>";
+		str += "<div class='photo'></div>";
+		str += "<div class='id'>" + user.id + "</div>";
+		str += "<div class='name'>" +"/ "+ user.name + "</div>";
+		str += "<div class='btn-del' onclick='delUser(\"" + user.id + "\")'></div>";
+		str += "</div>";
+		str += "</div>";
+		
+		return str;
+	}
+
+	function delUser(uid) {
+		var res = confirm("선택한 사용자를 삭제하시겠습니까 ?");
+		if (res) {
+			var params ="id=" + uid;
+			AJAX.call("userDel.jsp", params, function(data) {
+				alert("사용자 정보를 삭제했습니다.");
+				window.location.reload();
+		});
+	}
+	}
+});
+</script>

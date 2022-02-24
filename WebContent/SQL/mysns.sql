@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS mysns
+DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+USE mysns;
+
+CREATE TABLE IF NOT EXISTS user(
+    id VARCHAR(128) PRIMARY KEY, -- "email"
+	jsonstr VARCHAR(8192)
+);
+
+
+CREATE TABLE IF NOT EXISTS content(
+	no INT UNSIGNED PRIMARY KEY,
+	id VARCHAR(128), -- "email"
+	jsonstr VARCHAR(8192)
+);
+

@@ -1,0 +1,80 @@
+<html>
+<head>
+<meta name=viewport content="width=device-width, initial-scale=1, user-scalable=0">
+<meta charset="utf-8" />
+<link rel="stylesheet" href="css/core.css">
+<link rel="stylesheet" href="css/main.css">
+<title>책가람</title>
+</head>
+<body>
+	<div class="page-hdr">책가람</div>
+	<div class="page-body">
+		<div class="page-mnu">
+			<div class="menu" onclick="">홈</div>
+			<div class="menu" onclick="">책간순위</div>
+			<div class="menu" onclick="">북적상점</div>
+			<div class="menu" onclick="">내정보</div>
+			<div class="menu" onclick="addFeed()">북적북적</div>
+		</div>
+		<table id="list" class="section mtop-20 pad-16"></table>
+	</div>
+  		<style>
+	.container {
+	margin-bottom: 20px;
+	text-align: center;
+	color: black;
+	font-size: 1.1em;
+	font-family: 티머니 둥근바람;
+}
+</style>	   
+  		<div class="container">
+		<section class="main main-ranking">
+		<center>
+		   <h1>아몬드 아뜰리에</h1>
+			<p></p>
+			<p>서울서초구 청계산로 201 107호</p>
+			<p>청계산입구역 2번 출구에서 180m</p>
+			<p>0507-1391-5517</p>
+			<p>매일 10:00-22:00</p>
+			<p>일요일 0:00-24:00 매주 일요일 휴무</p>
+			<img src="image/amond.jpg" alt="" width="300" height="300">
+			<p> </p>
+			
+			<div class="list">
+			<ul>
+		    </ul>
+			</div>
+	
+			</section>
+			</div> 
+			</center>
+			<center> 
+			<div id="map" style="width:300px;height:300px;"></div>
+			
+			<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=02a2182d1c309ac547c2ae80cf72d40e"></script>
+			<script>
+			var mapContainer = document.getElementById('map'), 
+		    mapOption = { 
+		        center: new kakao.maps.LatLng(37.449151703328155, 127.05545664771414), 
+		    };
+
+		var map = new kakao.maps.Map(mapContainer, mapOption);
+
+		var markerPosition  = new kakao.maps.LatLng(37.449151703328155, 127.05545664771414); 
+
+
+		var marker = new kakao.maps.Marker({
+		    position: markerPosition
+		});
+
+		marker.setMap(map);
+
+			
+		 </script>
+		 </center>
+</body>
+</html>
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/core.js"></script>
+	<script>
+		</script>
